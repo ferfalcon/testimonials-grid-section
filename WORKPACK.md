@@ -281,15 +281,32 @@ Rechecked the current branch tree and confirmed there is still no package manife
 
 ## 8. Single implementation unit
 
-- Task ID: `P01-T01`
-- Objective:
-- Upstream references:
-- Prerequisites: None
-- Included files/behavior:
-- Excluded work:
-- Ordered implementation steps:
-- Required validation:
-- Definition of Done:
+- **Task ID:** `P01-T01`
+- **Objective:** Scaffold the maintained Astro + TypeScript baseline, implement the complete static responsive testimonials grid from the authorized Figma page, commit durable design/font assets, and validate `AC-001`–`AC-013` in one independently verifiable implementation output.
+- **Task-start baseline:** The canonical task is based on `SRC-REPO-001`. At actual Stage 10 start, the CLI must resolve a Task-start repository checkpoint at current `HEAD` after confirming that intervening history is workflow-only and approved planning remains current.
+- **Upstream references:** `PLAN-001`, `PLAN-002`, `PLAN-003`, `PLAN-004`. Together they cover the approved requirements, design/specification behavior, acceptance criteria, repository integration, and validation strategy.
+- **Prerequisites:** None.
+- **Repository context:** The implementation root is safely scaffoldable. Preserve `README.md`, `design-workflow.config.json`, `.workflow/**`, and `.github/workflows/design-workflow-command.yml`; follow the maintained `astro-typescript` adapter; do not add React, Tailwind, backend/state infrastructure, or unrelated dependencies.
+- **Included files/behavior:** Minimal Astro/npm/TypeScript/Playwright configuration and lockfile; `src/pages/index.astro`; `src/components/TestimonialCard.astro`; `src/styles/global.css`; durable repository assets for all five avatars, the quotation SVG, and Barlow Semi Condensed 500/600; adapted `tests/site.spec.ts`; `.github/workflows/validate-ui.yml`; static five-card source content; semantic source order; accessible decorative imagery; CSS-only 4/2/1 responsive grid; fit-derived transition widths; no invented interaction or motion.
+- **Excluded work:** Figma/source-design edits, copy correction, routing/forms/shared state, API/backend/auth/persistence, interactive card states, unrelated repository changes, production deployment/publishing, or profile/architecture expansion without a new approved decision.
+- **Ordered implementation steps:**
+  1. Reverify the time-bound Figma scope and exact Desktop/Tablet/Mobile evidence immediately before code work; capture current design assets while available.
+  2. Start `P01-T01` canonically at Stage 10 so the CLI resolves the actual current repository checkpoint and fails closed on non-workflow drift.
+  3. Materialize the minimum pinned Astro + TypeScript scaffold/configuration, lockfile, Playwright/axe setup, and validation workflow; do not retain sample application content.
+  4. Transfer the five avatars and quotation SVG into durable repository paths and obtain/load repository-controlled Barlow Semi Condensed 500/600 from an authoritative redistributable source. Block the affected fidelity criteria if required assets/fonts cannot be established.
+  5. Implement the five testimonials once, in canonical source order, using semantic Astro markup and `TestimonialCard.astro`; preserve the Figma copy exactly, including `developent experience`; use empty avatar alternative text and non-semantic/decorative quotation artwork.
+  6. Implement the evidenced colors, typography, spacing, radius, shadow, and CSS Grid compositions in `global.css`: wide 4-column, intermediate 2-column, narrow 1-column. Select exact transitions from browser fit/failure evidence rather than Figma frame labels.
+  7. Adapt `tests/site.spec.ts` to verify content/order, assets, required font weights, no invented focusable behavior, axe accessibility, overflow/reflow behavior, and required viewport evidence.
+  8. Run all declared build/static, functional, accessibility, responsive, and visual validations; capture/inspect screenshots at 1440, 768, 375 and transition-adjacent/wider/narrower widths; repair failures before completion.
+  9. Commit an implementation-only output, keep later workflow bookkeeping separate, and complete `P01-T01` canonically against the exact tested implementation SHA.
+- **Required validation:** Five canonical checks are declared before task readiness: `Build and static checks`, `Functional regression`, `Accessibility`, `Responsive behavior`, and `Visual fidelity`. All are required and must be `Passed` on the exact implementation output before task completion.
+- **Acceptance criteria:** `AC-001`–`AC-013`.
+- **Risks/discoveries/deviations:** Reverify mutable Figma input; capture expiring asset exports; establish repository-controlled Barlow font files; derive breakpoints from fit evidence; guard against shadow-induced overflow. A material Figma change, missing required asset/font, unexpected implementation-scope repository drift, architecture trigger, or scope expansion blocks affected work and requires impact assessment/replanning instead of a silent deviation.
+- **Definition of Done:** All five required validation checks pass; `AC-001`–`AC-013` are satisfied; no temporary Figma runtime URL remains; Barlow Semi Condensed 500/600 is verified in-browser; exact output commit is recorded canonically; application changes stay in approved scope; and the Workpack implementation narrative records any discoveries or approved deviations.
+
+### Stage 9 decomposition review
+
+Checked that Express has exactly one independently verifiable implementation task with no prerequisites; the task references all four required plan items; responsive/accessibility/content/state/error/testing concerns are integrated into the same objective; the five required validation checks are declared before readiness; and implementation remains forbidden while execution mode is Continuous documentation. No second task, hidden dependency, or profile upgrade is required by the approved scope.
 
 ## 9. Review pass 1 — Completeness and correctness
 
