@@ -70,7 +70,15 @@
       "statusEvidence": "Stage 8 adversarial plan review is recorded in the Workpack. The plan was corrected to the pinned scaffold's actual tests/site.spec.ts convention, sample scaffold content is explicitly excluded, durable font/assets remain enforced stop conditions, and cross-stage traceability/readiness was rechecked."
     }
   ],
-  "traceItems": [],
+  "traceItems": [
+    {
+      "id": "PLAN-001",
+      "owner": "ART-WORKPACK",
+      "status": "Active",
+      "required": true,
+      "references": []
+    }
+  ],
   "gates": [
     {
       "id": "GATE-001",
