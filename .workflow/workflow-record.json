@@ -381,15 +381,22 @@
           "name": "Functional regression",
           "kind": "Test",
           "required": true,
-          "status": "Not executed",
+          "status": "Passed",
           "expected": "Playwright verifies five testimonials, source order/copy, durable asset references, loaded required font weights, and no invented interactive behavior.",
+          "actual": "Exact commit 89c4da2a32be602211246d246bd733073d223066: Playwright passed the source-content/order/copy test, local durable imagery and self-hosted Barlow 500/600 test, and no-invented-controls coverage; all 6 browser tests passed.",
           "command": "npm run test:e2e",
-          "evidence": [],
-          "reason": "Pending authorized implementation",
+          "environment": "GitHub Actions ubuntu-24.04, Node 24.20.0, Playwright 1.63.0, Chromium 153.0.8010.12",
+          "executedAt": "2026-09-16T18:52:14Z",
+          "evidence": [
+            "https://github.com/ferfalcon/testimonials-grid-section/actions/runs/35136981181"
+          ],
           "references": [
             "PLAN-002",
             "PLAN-004"
-          ]
+          ],
+          "subject": {
+            "commit": "8a03627a9fda386889f6dfc124c238f95817d33f"
+          }
         },
         {
           "name": "Accessibility",
