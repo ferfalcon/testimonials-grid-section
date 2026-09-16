@@ -150,9 +150,32 @@ Every material requirement traces to source evidence, an explicit source-authori
 
 | Design ID | Intent | Evidence | Confidence |
 |---|---|---|---|
-| `DES-001` | ... | `EVD-001` | Confirmed / Observed / Inferred / Recommended |
+| `DES-001` | Treat the five cards as one peer testimonial collection whose primary visual hierarchy is profile identity → lead statement → supporting quotation. No visible collection heading is evidenced in the source. | `EVD-002`, `REQ-FR-001` | Observed |
+| `DES-002` | Keep a consistent card anatomy across all testimonials: compact profile row, strong 20px lead statement, smaller supporting quotation, 32px internal padding, 16px vertical rhythm, rounded corners, and the shared soft shadow. | `EVD-002`, `EVD-007`, `EVD-008`, `REQ-NFR-001` | Observed |
+| `DES-003` | Preserve the source’s card-specific color roles: Daniel uses purple/500 with white and purple/50 text; Jonathan uses grey/500 with white and grey/100; Jeanette and Kira use white with grey/500 and grey/400; Patrick uses dark-blue with grey/200 and grey/100. | `EVD-006`, `EVD-015`, `REQ-NFR-001`, `REQ-AR-003` | Observed |
+| `DES-004` | Daniel’s oversized quotation mark is decorative visual texture layered behind the card content; it should not be exposed as quotation content or alter reading order. | `EVD-009`, `REQ-AR-002` | Observed |
+| `DES-005` | The overall canvas remains quiet and neutral (`#f6f5f6`) so the varied testimonial cards carry the visual emphasis; the content block is centered within generous outer space at each supplied viewport. | `EVD-001`, `EVD-003`–`EVD-005`, `REQ-NFR-001` | Observed |
+| `DES-006` | Typography uses Barlow Semi Condensed throughout, with lead text visually dominant over names/roles and body quotations. Weight, size, and line-height roles should remain consistent even as line wrapping changes with width. | `EVD-007`, `REQ-NFR-003` | Observed |
+| `DES-007` | Long testimonial content is allowed to determine card height at narrow widths; no text is truncated, collapsed, or hidden to force uniform card heights. | `EVD-005`, Kira `4002:303`, `REQ-FR-001`, `REQ-NFR-002` | Observed at mobile; inferred between widths |
+| `DES-008` | Preserve source copy exactly, including the observed “developent” spelling and quotation-mark inconsistencies, unless a separate human-approved content correction supersedes the source. | `EVD-016`, `REQ-BR-001` | Confirmed by source-authority rule |
+| `DES-RWD-001` | Preserve one stable reading/source order—Daniel, Jonathan, Jeanette, Patrick, Kira—while changing only visual placement and span. | `EVD-014`, `REQ-FR-002`, `REQ-AR-001` | Observed |
+| `DES-RWD-002` | In the wide composition, use the source’s asymmetric five-card grid: Daniel wide upper-left, Jonathan upper-middle, Jeanette lower-left, Patrick wide lower-middle, and Kira spanning the tall right column. | `EVD-003`, `REQ-FR-003`, `REQ-NFR-001` | Observed |
+| `DES-RWD-003` | In the intermediate composition, Daniel becomes full width; Jonathan and Jeanette share a two-column row; Patrick and Kira each become full width below. | `EVD-004`, `REQ-FR-003`, `REQ-NFR-001` | Observed |
+| `DES-RWD-004` | In the narrow composition, all five cards become a single vertical column with the same content order and approximately the source’s 32px inter-card rhythm. | `EVD-005`, `REQ-FR-003`, `REQ-NFR-001` | Observed |
+| `DES-RWD-005` | Between supplied examples, card widths should remain fluid and the composition should transition when the current arrangement can no longer preserve readable content, intended gaps, and the no-overflow requirement—not at a breakpoint chosen merely because a Figma frame is named “Tablet”. | `AUD-001`, `REQ-FR-003`, `REQ-NFR-002` | Recommended to resolve missing intermediate-width evidence |
+| `DES-RWD-006` | Daniel’s decorative quotation mark may reposition within its card as available width changes, but it remains behind content and must not obscure the profile or primary statement. | `EVD-009`, `REQ-NFR-002` | Observed transformation; recommended interpolation |
+| `DES-009` | The five avatars remain visually paired with their adjacent names. Because the text already identifies each person, treating the raster portraits as redundant/decorative for assistive technology is the preferred accessibility intent unless implementation inspection reveals distinct informational value. | `EVD-002`, `AUD-002`, `REQ-AR-002` | Recommended |
+| `DES-010` | Use the design tokens evidenced in the scoped file as the visual source of truth; subscribed Material 3, Simple Design System, and iOS libraries do not define this result because no scoped component instances depend on them. | `EVD-006`–`EVD-011`, `AUD-005` | Observed |
+| `DES-INT-001` | The testimonial cards are static content containers. No hover, pressed, selected, expanded, focus, drag, or navigation state is evidenced, so no interactive state should be introduced merely for visual effect. | `EVD-013`, `REQ-CON-002` | Observed |
+| `DES-INT-002` | No motion or transition is evidenced. Responsive rearrangement is layout reflow rather than an animated interaction; reduced-motion behavior is therefore not material unless motion is later introduced. | `EVD-013`, `REQ-CON-002` | Observed |
 
-Use `DES-RWD-*` and `DES-INT-*` where applicable.
+#### Stage 3 review pass 1 — completeness and correctness
+
+Covered information hierarchy, card anatomy, visual system, responsive transformations, long-content behavior, decorative artwork, assets/design-system context, accessibility intent, and the absence of interaction/motion. Removed raw CSS-style prescriptions and kept the document focused on visual and behavioral intent rather than repository structure.
+
+#### Stage 3 review pass 2 — consistency, traceability, risks, and uncertainty
+
+Each design decision traces to audit evidence and applicable requirements. Observed Desktop/Tablet/Mobile transformations are separated from the recommended interpolation rule for unsupplied widths. No exact breakpoint is presented as source truth. Accessibility recommendations for avatar redundancy and decorative quotation artwork are explicitly distinguished from Figma-proven behavior. No design decision expands the scope beyond a static Express-eligible result.
 
 ### Specification and acceptance criteria
 
@@ -224,7 +247,7 @@ This section remains narrative in CLI-managed mode. Do not duplicate record-owne
 
 | Discovery | Impact | Owning artifact/section | Required update |
 |---|---|---|---|
-| ... | ... | ... | ... | ... |
+| ... | ... | ... | ... |
 
 ### Deviations
 
