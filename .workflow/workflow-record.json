@@ -61,13 +61,13 @@
       "id": "ART-WORKPACK",
       "type": "WORKPACK",
       "path": "WORKPACK.md",
-      "status": "Reviewed",
+      "status": "Draft",
       "baseline": [
         "SRC-DS-001",
         "SRC-REPO-001"
       ],
-      "statusChangedAt": "2026-09-16T04:22:23.972Z",
-      "statusEvidence": "Stage 6 architecture rationale is recorded in the consolidated Workpack and the canonical architecture decision is Not required. Review confirms the decision matches the static Express scope and introduces no unsupported structural assumptions."
+      "statusChangedAt": "2026-09-16T04:25:13.135Z",
+      "statusEvidence": "Stage 7 must add the repository-aware implementation plan to the consolidated Express Workpack before review."
     }
   ],
   "traceItems": [],
