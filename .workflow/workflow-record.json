@@ -74,6 +74,14 @@
       "method": "GitHub immutable commit and tree inspection",
       "evidence": "Pinned repository commit 4eefb50b2ac834344ae997a043f2fb000054f1ac remains accessible and identifies the configured repository; at that baseline the implementation root contains no application scaffold, only README plus workflow configuration and pinned caller setup.",
       "checkedAt": "2026-09-16T03:57:47.231Z"
+    },
+    {
+      "id": "VER-003",
+      "snapshot": "SRC-REPO-003",
+      "result": "Unchanged",
+      "method": "GitHub immutable output and lineage inspection",
+      "evidence": "Implementation output commit 89c4da2a32be602211246d246bd733073d223066 remains accessible and is the merge base for all eight subsequent branch commits; comparison to Stage 11 branch HEAD 8a8451fb54103382d66fc4ce5bb856b0620e6ace shows only .workflow record/generated bookkeeping files changed after the output, with no implementation file changes. Exact-output validation run 35136981181 passed all required checks.",
+      "checkedAt": "2026-09-16T19:02:34.722Z"
     }
   ],
   "artifacts": [
