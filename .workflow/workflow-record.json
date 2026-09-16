@@ -22,7 +22,7 @@
       "id": "SRC-DS-001",
       "role": "Input baseline",
       "pinStrength": "Time-bound",
-      "status": "Unverified",
+      "status": "Active",
       "reference": "https://www.figma.com/design/rEyKRJIWQqTu91C2U41mXa/Testimonials-grid-section---%F0%9F%A4%96-Workflow"
     },
     {
@@ -34,7 +34,16 @@
       "commit": "4eefb50b2ac834344ae997a043f2fb000054f1ac"
     }
   ],
-  "verifications": [],
+  "verifications": [
+    {
+      "id": "VER-001",
+      "snapshot": "SRC-DS-001",
+      "result": "Unchanged",
+      "method": "Connected Figma inspection",
+      "evidence": "Authorized page 20:2 matched configuration scope; inspected Desktop 2001:1882, Tablet 2012:730, Mobile 2012:1466, Style Guide 6018:261, and design variables on 2026-09-16.",
+      "checkedAt": "2026-09-16T03:57:18.577Z"
+    }
+  ],
   "artifacts": [
     {
       "id": "ART-WORKPACK",
