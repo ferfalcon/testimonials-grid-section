@@ -77,6 +77,13 @@
       "status": "Active",
       "required": true,
       "references": []
+    },
+    {
+      "id": "PLAN-002",
+      "owner": "ART-WORKPACK",
+      "status": "Active",
+      "required": true,
+      "references": []
     }
   ],
   "gates": [
