@@ -305,7 +305,22 @@
       ],
       "output": null,
       "blocker": null,
-      "validation": []
+      "validation": [
+        {
+          "name": "Build and static checks",
+          "kind": "Build",
+          "required": true,
+          "status": "Not executed",
+          "expected": "Deterministic install, Astro/TypeScript checks, and production build succeed for the tested implementation commit.",
+          "command": "npm ci && npm run check && npm run build",
+          "evidence": [],
+          "reason": "Pending authorized implementation",
+          "references": [
+            "PLAN-001",
+            "PLAN-002"
+          ]
+        }
+      ]
     }
   ],
   "profileTransitions": [],
