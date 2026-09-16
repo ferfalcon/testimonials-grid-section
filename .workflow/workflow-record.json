@@ -7,7 +7,7 @@
   },
   "state": {
     "stage": 0,
-    "status": "In progress",
+    "status": "Ready",
     "activeInputs": [
       "SRC-DS-001",
       "SRC-REPO-001"
@@ -65,7 +65,29 @@
     }
   ],
   "traceItems": [],
-  "gates": [],
+  "gates": [
+    {
+      "id": "GATE-001",
+      "stage": 0,
+      "status": "Active",
+      "result": "Passed",
+      "baseline": [
+        "SRC-DS-001",
+        "SRC-REPO-001"
+      ],
+      "verifications": [
+        "VER-001",
+        "VER-002"
+      ],
+      "artifacts": [
+        "ART-WORKPACK"
+      ],
+      "evidence": "Stage 0 baseline, Express eligibility, implementation adapter resolution, active-input verification, and both Stage 0 review passes are complete; canonical preflight recommended Passed.",
+      "recordedAt": "2026-09-16T03:59:16.687Z",
+      "approvedBy": "ChatGPT",
+      "artifactRevisions": []
+    }
+  ],
   "tasks": [],
   "profileTransitions": [],
   "implementationReviews": [],
