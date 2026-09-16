@@ -360,15 +360,22 @@
           "name": "Build and static checks",
           "kind": "Build",
           "required": true,
-          "status": "Not executed",
+          "status": "Passed",
           "expected": "Deterministic install, Astro/TypeScript checks, and production build succeed for the tested implementation commit.",
+          "actual": "Exact commit 89c4da2a32be602211246d246bd733073d223066: npm ci, Astro/TypeScript check, and production build all succeeded; Astro reported 0 errors, 0 warnings, and 0 hints.",
           "command": "npm ci && npm run check && npm run build",
-          "evidence": [],
-          "reason": "Pending authorized implementation",
+          "environment": "GitHub Actions ubuntu-24.04, Node 24.20.0, npm 11.19.0",
+          "executedAt": "2026-09-16T18:52:14Z",
+          "evidence": [
+            "https://github.com/ferfalcon/testimonials-grid-section/actions/runs/35136981181"
+          ],
           "references": [
             "PLAN-001",
             "PLAN-002"
-          ]
+          ],
+          "subject": {
+            "commit": "89c4da2a32be602211246d246bd733073d223066"
+          }
         },
         {
           "name": "Functional regression",
