@@ -29,7 +29,7 @@
       "id": "SRC-REPO-001",
       "role": "Input baseline",
       "pinStrength": "Immutable",
-      "status": "Unverified",
+      "status": "Active",
       "reference": "https://github.com/ferfalcon/testimonials-grid-section",
       "commit": "4eefb50b2ac834344ae997a043f2fb000054f1ac"
     }
@@ -42,6 +42,14 @@
       "method": "Connected Figma inspection",
       "evidence": "Authorized page 20:2 matched configuration scope; inspected Desktop 2001:1882, Tablet 2012:730, Mobile 2012:1466, Style Guide 6018:261, and design variables on 2026-09-16.",
       "checkedAt": "2026-09-16T03:57:18.577Z"
+    },
+    {
+      "id": "VER-002",
+      "snapshot": "SRC-REPO-001",
+      "result": "Unchanged",
+      "method": "GitHub immutable commit and tree inspection",
+      "evidence": "Pinned repository commit 4eefb50b2ac834344ae997a043f2fb000054f1ac remains accessible and identifies the configured repository; at that baseline the implementation root contains no application scaffold, only README plus workflow configuration and pinned caller setup.",
+      "checkedAt": "2026-09-16T03:57:47.231Z"
     }
   ],
   "artifacts": [
