@@ -61,13 +61,13 @@
       "id": "ART-WORKPACK",
       "type": "WORKPACK",
       "path": "WORKPACK.md",
-      "status": "Reviewed",
+      "status": "Draft",
       "baseline": [
         "SRC-DS-001",
         "SRC-REPO-001"
       ],
-      "statusChangedAt": "2026-09-16T04:27:50.580Z",
-      "statusEvidence": "Stage 7 repository-aware plan reviewed against the current branch tree and pinned Astro adapter. Existing and proposed paths are distinguished; responsive, accessibility, asset, font, CI, and regression work are integrated; both plan review passes are recorded."
+      "statusChangedAt": "2026-09-16T04:32:09.014Z",
+      "statusEvidence": "Stage 8 adversarial plan review must record corrections and readiness in the Express Workpack before approval."
     }
   ],
   "traceItems": [],
