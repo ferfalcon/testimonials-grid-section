@@ -333,6 +333,20 @@
             "PLAN-002",
             "PLAN-004"
           ]
+        },
+        {
+          "name": "Accessibility",
+          "kind": "Accessibility",
+          "required": true,
+          "status": "Not executed",
+          "expected": "Semantic source order, decorative imagery treatment, non-redundant avatar alternatives, keyboard behavior, source contrast roles, and axe-core checks pass.",
+          "command": "npm run test:e2e",
+          "evidence": [],
+          "reason": "Pending authorized implementation",
+          "references": [
+            "PLAN-002",
+            "PLAN-004"
+          ]
         }
       ]
     }
