@@ -179,12 +179,47 @@ Each design decision traces to audit evidence and applicable requirements. Obser
 
 ### Specification and acceptance criteria
 
-| Specification ID | Observable behavior | Related requirement |
-|---|---|---|
-| `SPEC-BEH-001` | ... | `REQ-FR-001` |
+| Specification ID | Observable behavior | Related requirements/design | Validation |
+|---|---|---|---|
+| `SPEC-BEH-001` | Render exactly five testimonial cards in document order Daniel Clifford → Jonathan Walters → Jeanette Harmon → Patrick Abrams → Kira Whittle. Each card contains its source avatar, name, `Verified Graduate` role, lead statement, and full quotation; no testimonial content is omitted, duplicated, truncated, or reassigned. | `REQ-FR-001`, `REQ-FR-002`, `DES-001`, `DES-RWD-001` | DOM/content inspection plus screenshot review. |
+| `SPEC-BEH-002` | At a 1440px viewport, the composition follows the supplied wide reference: Daniel occupies the wide upper-left region, Jonathan the upper-middle, Jeanette the lower-left, Patrick the wide lower-middle, and Kira the tall right column. The content block is centered with approximately 32px inter-card gaps and the relative two-column spans shown in Desktop `2001:1882`. | `REQ-FR-003`, `REQ-NFR-001`, `DES-RWD-002` | Browser screenshot comparison at 1440px against Desktop reference. |
+| `SPEC-BEH-003` | At a 768px viewport, Daniel is full width; Jonathan and Jeanette form the only two-card row; Patrick is full width below them; Kira is full width last. The two-card row keeps an approximately 32px gap and the content remains centered like Tablet `2012:730`. | `REQ-FR-003`, `REQ-NFR-001`, `DES-RWD-003` | Browser screenshot comparison at 768px against Tablet reference. |
+| `SPEC-BEH-004` | At a 375px viewport, all five cards form one vertical column in source order, approximately 305px wide with about 35px side margins and about 32px between cards, while card height expands to fit the full source text. | `REQ-FR-003`, `REQ-NFR-001`, `DES-RWD-004`, `DES-007` | Browser screenshot comparison at 375px against Mobile reference. |
+| `SPEC-BEH-005` | Between supplied viewport examples, the layout remains fluid and switches composition before the current arrangement would cause horizontal page scrolling, overlapping cards/text, clipping, or loss of the intended inter-card spacing/readability. The exact transition width is an implementation/validation decision, not source truth. Document order remains unchanged through every transition. | `REQ-FR-003`, `REQ-NFR-002`, `DES-RWD-001`, `DES-RWD-005` | Resize/browser checks at representative intermediate widths and around each selected transition. |
+| `SPEC-BEH-006` | Every card preserves the evidenced visual roles: 32px internal padding, 16px principal vertical gap, 8px corner radius, shared soft shadow, source-specific background/foreground colors, and the Barlow Semi Condensed type hierarchy (20px/600/1.2 lead; 13px/500/1.4 quote; 13px/500/1.1 name; 11px/500/1.1 role), allowing normal font-rendering tolerance. | `REQ-NFR-001`, `REQ-NFR-003`, `DES-002`, `DES-003`, `DES-006` | Computed-style inspection and visual comparison at supplied widths. |
+| `SPEC-BEH-007` | Daniel’s quotation-mark artwork remains visually behind the card content and may reposition with width, but never obscures the avatar/profile or lead statement and never participates in text flow. | `REQ-NFR-002`, `DES-004`, `DES-RWD-006` | Screenshot review at supplied and transition-adjacent widths. |
+| `SPEC-DATA-001` | Testimonial strings are copied from the authorized Figma source without silent spelling, punctuation, quotation-mark, or spacing corrections; the observed `developent experience` wording remains unless the human explicitly approves a source-copy change. | `REQ-BR-001`, `DES-008` | Source-to-rendered-content comparison. |
+| `SPEC-ACC-001` | Semantic/document order is Daniel → Jonathan → Jeanette → Patrick → Kira regardless of visual grid placement. CSS/layout positioning must not change assistive-technology reading order. | `REQ-AR-001`, `DES-RWD-001` | DOM order inspection and accessibility-tree/semantic review. |
+| `SPEC-ACC-002` | The decorative quotation mark is hidden from assistive technology or implemented as non-semantic decoration. Portrait avatars use empty alternative text when the adjacent visible name supplies the same identity, unless later evidence establishes distinct informational content. | `REQ-AR-002`, `DES-004`, `DES-009` | DOM/accessibility-tree inspection. |
+| `SPEC-ACC-003` | Source text/background color roles retain at least a 4.5:1 contrast ratio for normal text; implementation substitutions must not reduce any used pair below that threshold. | `REQ-AR-003`, `DES-003` | Automated/manual contrast calculation from rendered colors. |
+| `SPEC-INT-001` | Testimonial cards expose no invented click, hover-only, expanded, selected, drag, or navigation behavior. The finished section adds no focusable control solely for presentation and no motion is required for responsive reflow. | `REQ-CON-002`, `DES-INT-001`, `DES-INT-002` | Keyboard tab-through and DOM/interactivity inspection. |
+| `SPEC-VAL-001` | The five avatar images and quotation-mark SVG used by the delivered page resolve from durable repository-controlled assets; no production markup or stylesheet references a temporary `figma.com/api/mcp/asset` URL. | `REQ-CON-001`, `AUD-003` | Repository search plus built-page/network asset inspection. |
+| `SPEC-VAL-002` | Barlow Semi Condensed is actually available to the rendered page at the required 500 and 600 weights; if the primary font fails to load during validation, the result is not considered visually validated against Figma. | `REQ-NFR-003`, `AUD-007`, `DES-006` | Browser computed-font/network inspection. |
 
-- [ ] `AC-001` ...
-- [ ] `AC-002` ...
+No loading, empty, error, disabled, retry, authentication, persistence, or server-failure states are specified because the approved result is static content and no source evidence establishes those states.
+
+#### Acceptance criteria
+
+- [ ] `AC-001` — At runtime there are exactly five testimonial cards, and their DOM/content order is Daniel, Jonathan, Jeanette, Patrick, Kira. (`SPEC-BEH-001`, `SPEC-ACC-001`)
+- [ ] `AC-002` — Each card’s visible name, role, lead statement, full quotation, and avatar association match `SRC-DS-001`; Kira’s source `developent experience` wording is unchanged unless a later approved content decision supersedes it. (`SPEC-BEH-001`, `SPEC-DATA-001`)
+- [ ] `AC-003` — A 1440px browser capture materially matches Desktop `2001:1882` in card placement/spans, centered content block, 32px grid rhythm, typography hierarchy, palette, radius, shadow, and Daniel quotation artwork. (`SPEC-BEH-002`, `SPEC-BEH-006`, `SPEC-BEH-007`)
+- [ ] `AC-004` — A 768px browser capture materially matches Tablet `2012:730`: Daniel full width; Jonathan + Jeanette two-up; Patrick full width; Kira full width; no content loss or overlap. (`SPEC-BEH-003`)
+- [ ] `AC-005` — A 375px browser capture materially matches Mobile `2012:1466`: one 305px-ish centered column, five cards in source order, roughly 32px gaps, full untruncated copy, and no horizontal page scroll. (`SPEC-BEH-004`)
+- [ ] `AC-006` — Resizing through representative widths between 375 and 1440px, including immediately around implementation-selected layout transitions, produces no horizontal page scrolling, card/text overlap, unintended clipping, missing content, or DOM reordering. (`SPEC-BEH-005`)
+- [ ] `AC-007` — Computed typography uses Barlow Semi Condensed at the evidenced 500/600 weights and source size/line-height roles at the three reference widths; text wrapping is close enough to preserve the source card proportions without truncation. (`SPEC-BEH-006`, `SPEC-VAL-002`)
+- [ ] `AC-008` — Rendered source color pairs remain at or above 4.5:1 contrast for normal text. (`SPEC-ACC-003`)
+- [ ] `AC-009` — The decorative quotation mark is absent from the accessibility tree, and testimonial avatars do not redundantly announce each visible person name. (`SPEC-ACC-002`)
+- [ ] `AC-010` — Keyboard tabbing reveals no testimonial-card focus stops or invented interactive behavior; layout changes do not add motion. (`SPEC-INT-001`)
+- [ ] `AC-011` — Repository/build output contains durable copies/references for all five avatars and the quotation-mark SVG, and a repository search finds no `figma.com/api/mcp/asset` runtime dependency. (`SPEC-VAL-001`)
+- [ ] `AC-012` — At the supplied reference widths, computed card padding, principal internal gap, corner radius, colors, and shadow materially correspond to the evidenced design tokens. (`SPEC-BEH-006`)
+
+#### Stage 4 review pass 1 — completeness and correctness
+
+Translated every material requirement and design intent into observable behavior without prescribing repository paths, component names, CSS mechanisms, or an unsupported breakpoint number. Covered the three supplied viewport compositions, interpolation/failure conditions, long content, visual tokens, decorative artwork, source-copy authority, semantic order, redundant imagery, contrast, static interaction scope, durable assets, and font availability. Non-applicable dynamic-data/error states are explicitly excluded rather than invented.
+
+#### Stage 4 review pass 2 — consistency, traceability, risks, and uncertainty
+
+Specification IDs use the canonical namespaces and trace back to `REQ-*` plus relevant `DES-*` decisions. Acceptance criteria are reproducible through browser screenshots, resize checks, DOM/accessibility inspection, computed-style/contrast checks, and repository/build inspection. The exact responsive transition widths remain intentionally unresolved for repository-aware planning because Figma does not prove them; the specification instead defines the observable failure conditions transitions must prevent. No hidden architecture or new product behavior was introduced.
 
 ## 7. Repository-aware implementation approach
 
