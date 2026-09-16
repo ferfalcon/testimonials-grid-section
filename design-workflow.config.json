@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "project": {
+    "name": "Testimonials grid section"
+  },
+  "repository": {
+    "url": "https://github.com/ferfalcon/testimonials-grid-section",
+    "implementationRoot": ".",
+    "workingBranch": "design/initial-ui"
+  },
+  "design": {
+    "provider": "figma",
+    "url": "https://www.figma.com/design/rEyKRJIWQqTu91C2U41mXa/Testimonials-grid-section---%F0%9F%A4%96-Workflow",
+    "scope": "🤖 Testimonials grid section"
+  },
+  "deployment": {
+    "vercelProjectUrl": null,
+    "productionUrl": null
+  },
+  "workflow": {
+    "reviewStyle": "brief-and-preview"
+  }
+}
