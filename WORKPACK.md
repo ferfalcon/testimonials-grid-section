@@ -260,7 +260,7 @@ The current branch still contains no application scaffold. Existing repository-o
 | `PLAN-001` | Establish the maintained Astro + TypeScript application/validation baseline without disturbing workflow-owned repository state. Supports all `REQ-*`; especially `REQ-CON-002`, `SPEC-VAL-002`. | Preserve existing `README.md`, `design-workflow.config.json`, `.workflow/**`, `.github/workflows/design-workflow-command.yml`. Proposed: `.gitignore`, `package.json`, `package-lock.json`, `astro.config.mjs`, `tsconfig.json`, `playwright.config.ts`, `.github/workflows/validate-ui.yml`. | Materialize only the minimal maintained scaffold files required by the adapter, replace all sample/fixture content, keep npm/lockfile versions aligned with the pinned adapter, and avoid React/Tailwind or unrelated dependencies. Validate with `npm ci`, `npm run check`, and `npm run build`; the CI workflow must emit evidence for the exact tested implementation commit. |
 | `PLAN-002` | Implement the testimonial content and visual system with durable assets and semantic document order. Supports `REQ-FR-001`, `REQ-FR-002`, `REQ-NFR-001`, `REQ-NFR-003`, `REQ-AR-001`, `REQ-AR-002`, `REQ-AR-003`, `REQ-BR-001`, `REQ-CON-001`; `SPEC-BEH-001`, `SPEC-BEH-006`, `SPEC-BEH-007`, `SPEC-DATA-001`, `SPEC-ACC-001`–`003`, `SPEC-VAL-001`–`002`. | Proposed: `src/pages/index.astro`, `src/components/TestimonialCard.astro`, `src/styles/global.css`, `public/assets/avatar-daniel.*`, `avatar-jonathan.*`, `avatar-jeanette.*`, `avatar-patrick.*`, `avatar-kira.*`, `bg-pattern-quotation.svg`, and repository-local Barlow Semi Condensed 500/600 font assets in a meaningful `public/assets/fonts/` location if an authoritative redistributable source can be transferred. | Keep testimonial data in source order and render one presentational Astro component per entry. Use semantic static markup; avatars are visually present with empty alt text because adjacent names identify the people; the quotation graphic is CSS/background or otherwise hidden from assistive technology. Define shared CSS custom properties from the evidenced colors, spacing, type roles, radius, and shadow. Preserve source copy exactly, including `developent experience`. If durable font transfer cannot be established from an authoritative source, stop the font-dependent fidelity claim rather than using an unapproved substitute. |
 | `PLAN-003` | Reproduce the three responsive compositions and safe behavior between/outside them. Supports `REQ-FR-003`, `REQ-NFR-001`, `REQ-NFR-002`; `DES-RWD-001`–`007`; `SPEC-BEH-002`–`009`. | Primarily proposed `src/styles/global.css` plus class hooks in `src/pages/index.astro` / `TestimonialCard.astro`; no JavaScript layout state. | Use CSS Grid so DOM order never changes. Wide mode is a four-column grid where Daniel/Patrick span two columns and Kira spans two rows; intermediate mode is two columns with Daniel/Patrick/Kira spanning both and Jonathan/Jeanette one each; narrow mode is one column. Keep a centered max-width near the 1114px Desktop evidence and fluid side gutters. Select the two transition values during implementation from actual container-fit/failure checks (roughly the point where four or two readable card columns plus 32px gaps no longer fit), then test immediately above/below them; do not treat 768px/1440px frame labels as automatic CSS breakpoints. Exercise 1440, 768, 375, one wider reference, one narrower reference, representative intermediate widths, and long-content wrapping. |
-| `PLAN-004` | Add regression protection for content, accessibility, assets, responsive behavior, and visual evidence. Supports all `AC-001`–`AC-013`. | Proposed: `tests/testimonials.spec.ts` (or the scaffold’s equivalent Playwright test location) and `.github/workflows/validate-ui.yml`; generated screenshots/results remain validation evidence, not source design. | Extend the maintained Playwright baseline to assert exactly five cards and source order/copy, no unwanted focusable card controls, no horizontal overflow at the required widths, durable asset URLs, loaded Barlow Semi Condensed 500/600, and axe-core results. Capture browser screenshots at 1440/768/375 plus transition-adjacent widths for inspection against Figma. Run deterministic install, Astro/type checks, build, Chromium setup, and `npm run test:e2e`. Do not claim pixel-perfect automated comparison unless such a reference harness is actually created and run. |
+| `PLAN-004` | Add regression protection for content, accessibility, assets, responsive behavior, and visual evidence. Supports all `AC-001`–`AC-013`. | Proposed: adapt the maintained scaffold test at `tests/site.spec.ts` and add `.github/workflows/validate-ui.yml`; generated screenshots/results remain validation evidence, not source design. | Replace the scaffold sample assertions with testimonial-specific Playwright coverage: exactly five cards and source order/copy, no unwanted focusable card controls, no horizontal overflow at required widths, durable asset URLs, loaded Barlow Semi Condensed 500/600, and axe-core results. Capture browser screenshots at 1440/768/375 plus transition-adjacent widths for inspection against Figma. Run deterministic install, Astro/type checks, build, Chromium setup, and `npm run test:e2e`. Do not claim pixel-perfect automated comparison unless such a reference harness is actually created and run. |
 
 ### Integration details
 
@@ -293,27 +293,31 @@ Rechecked the current branch tree and confirmed there is still no package manife
 
 ## 9. Review pass 1 — Completeness and correctness
 
-Review source identity/scope, eligibility, evidence coverage, requirements/design/spec/AC, repository assumptions, accessibility/responsive/states/errors/validation, unsupported claims, and missing decisions.
+Adversarially checked the Stage 7 plan against the exact Figma scope, all must-have requirements/specifications, the architecture-not-required decision, the current branch tree, and the pinned maintained Astro adapter. The plan covers application scaffolding, visual/content fidelity, durable assets, font availability, semantic order, accessibility, responsive interpolation and out-of-range behavior, long content, static-state scope, CI/browser checks, and regression evidence.
 
 ### Corrections
 
-- ...
+- Corrected `PLAN-004` from an invented/ambiguous `tests/testimonials.spec.ts` path to the pinned scaffold’s actual Playwright path, `tests/site.spec.ts`, which will be adapted rather than creating a parallel test convention.
+- Confirmed that the plan does not require sample scaffold pages/layouts to be retained; only the minimal maintained baseline is materialized, and sample Fieldnotes/about content must not survive into the product implementation.
+- Kept durable Barlow Semi Condensed 500/600 availability as an execution-time stop condition rather than weakening `SPEC-VAL-002` with a substitute font or remote runtime dependency.
 
 ### Result
 
-Ready for pass 2 / Blocked
+Ready for pass 2.
 
 ## 10. Review pass 2 — Consistency, traceability, source integrity, and risk
 
-Review ID/snapshot integrity, requirement → design → specification → acceptance → task traceability, contradictions/hidden assumptions, scope/upgrade triggers, repository compatibility/regression risk, and validation executability.
+Cross-checked the corrected plan against `EVD-*` → `REQ-*` → `DES-*` → `SPEC-*` → `AC-*`, `SRC-REPO-001`, and the pinned adapter evidence. All must-have acceptance criteria map into `PLAN-001`–`PLAN-004`; proposed paths are distinguished from current repository files; architecture remains intentionally skipped; and no new product behavior, backend concern, browser-support promise, arbitrary breakpoint, or deployment requirement was introduced.
 
 ### Corrections
 
-- ...
+- Verified the maintained validation contract uses npm/lockfile, Astro/type checking, production build, Playwright Chromium, axe-core, and the exact `tests/site.spec.ts` convention. The plan now names those evidence-backed commands/paths rather than an invented equivalent.
+- Verified binary design assets are an implementation prerequisite, not a planning assumption: if current Figma exports or an authoritative redistributable font source cannot be transferred into repository-controlled files, affected fidelity acceptance criteria remain unpassed and implementation must stop for resolution rather than silently falling back.
+- Rechecked scope containment: the command bridge, workflow record/projections, project configuration, and unrelated repository-level state are preserved; application work stays inside the configured implementation root except the explicitly planned validation workflow.
 
 ### Readiness
 
-Ready for implementation / Ready with non-blocking risks / Blocked or must upgrade
+**Ready for implementation with documented execution-time stop conditions.** The remaining risks are not unresolved product decisions: reverify the time-bound Figma source immediately before code work; capture expiring design assets while available; obtain/load repository-controlled Barlow Semi Condensed 500/600; and choose responsive transition values from browser fit evidence. Failure of any required asset/font/source verification blocks the affected acceptance criteria rather than authorizing a deviation.
 
 ## 11. Implementation narrative
 
