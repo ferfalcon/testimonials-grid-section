@@ -64,7 +64,8 @@ const testimonials = [
   </head>
   <body>
     <main class="page-shell" id="main-content">
-      <section class="testimonials-grid" aria-label="Graduate testimonials">
+      <h1 class="visually-hidden" id="testimonials-heading">Graduate testimonials</h1>
+      <section class="testimonials-grid" aria-labelledby="testimonials-heading">
         {testimonials.map((testimonial) => <TestimonialCard {...testimonial} />)}
       </section>
     </main>
