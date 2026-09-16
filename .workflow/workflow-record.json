@@ -347,6 +347,20 @@
             "PLAN-002",
             "PLAN-004"
           ]
+        },
+        {
+          "name": "Responsive behavior",
+          "kind": "Responsive",
+          "required": true,
+          "status": "Not executed",
+          "expected": "Reference widths 1440, 768, and 375 plus implementation-selected transition-adjacent, wider, and narrower widths preserve required composition/order with no horizontal overflow, clipping, overlap, or content loss.",
+          "command": "npm run test:e2e",
+          "evidence": [],
+          "reason": "Pending authorized implementation",
+          "references": [
+            "PLAN-003",
+            "PLAN-004"
+          ]
         }
       ]
     }
