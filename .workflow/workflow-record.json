@@ -61,13 +61,13 @@
       "id": "ART-WORKPACK",
       "type": "WORKPACK",
       "path": "WORKPACK.md",
-      "status": "Reviewed",
+      "status": "Draft",
       "baseline": [
         "SRC-DS-001",
         "SRC-REPO-001"
       ],
-      "statusChangedAt": "2026-09-16T04:34:21.113Z",
-      "statusEvidence": "Stage 8 adversarial plan review is recorded in the Workpack. The plan was corrected to the pinned scaffold's actual tests/site.spec.ts convention, sample scaffold content is explicitly excluded, durable font/assets remain enforced stop conditions, and cross-stage traceability/readiness was rechecked."
+      "statusChangedAt": "2026-09-16T04:44:38.886Z",
+      "statusEvidence": "Stage 9 must add the final single-task implementation narrative and decomposition review before the Workpack is reviewed again."
     }
   ],
   "traceItems": [
