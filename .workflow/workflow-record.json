@@ -12,7 +12,7 @@
       "SRC-DS-001",
       "SRC-REPO-001"
     ],
-    "currentTask": null,
+    "currentTask": "P01-T01",
     "latestOutput": null,
     "latestValidationRuntime": null,
     "architectureDecision": {
@@ -36,6 +36,16 @@
       "status": "Active",
       "reference": "https://github.com/ferfalcon/testimonials-grid-section",
       "commit": "4eefb50b2ac834344ae997a043f2fb000054f1ac"
+    },
+    {
+      "id": "SRC-REPO-002",
+      "role": "Task start",
+      "pinStrength": "Immutable",
+      "status": "Active",
+      "reference": "https://github.com/ferfalcon/testimonials-grid-section",
+      "commit": "dc1bb15c7d81c84f44dcf070421f4f5020ad5b5f",
+      "parent": "SRC-REPO-001",
+      "task": "P01-T01"
     }
   ],
   "verifications": [
@@ -334,8 +344,8 @@
   "tasks": [
     {
       "id": "P01-T01",
-      "status": "Ready",
-      "baseline": "SRC-REPO-001",
+      "status": "In progress",
+      "baseline": "SRC-REPO-002",
       "prerequisites": [],
       "references": [
         "PLAN-001",
