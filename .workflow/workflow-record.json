@@ -319,6 +319,20 @@
             "PLAN-001",
             "PLAN-002"
           ]
+        },
+        {
+          "name": "Functional regression",
+          "kind": "Test",
+          "required": true,
+          "status": "Not executed",
+          "expected": "Playwright verifies five testimonials, source order/copy, durable asset references, loaded required font weights, and no invented interactive behavior.",
+          "command": "npm run test:e2e",
+          "evidence": [],
+          "reason": "Pending authorized implementation",
+          "references": [
+            "PLAN-002",
+            "PLAN-004"
+          ]
         }
       ]
     }
