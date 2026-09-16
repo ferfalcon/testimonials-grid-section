@@ -6,8 +6,8 @@
     "executionMode": "Continuous documentation"
   },
   "state": {
-    "stage": 0,
-    "status": "Ready",
+    "stage": 1,
+    "status": "In progress",
     "activeInputs": [
       "SRC-DS-001",
       "SRC-REPO-001"
