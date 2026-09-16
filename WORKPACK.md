@@ -7,53 +7,76 @@ updated: 2026-09-16
 project: Testimonials grid section
 ---
 
-# Workpack: Result title
+# Workpack: Testimonials grid section
 
 ## 2. Express eligibility
 
-- [ ] One bounded source scope or coherent source bundle
-- [ ] One coherent implementation result
-- [ ] At most one implementation task
-- [ ] No meaningful routing, shared state, persistence, auth, API, migration, deployment, security, privacy, or rollback decision
-- [ ] No unresolved material product decision
-- [ ] No coordination requiring separate task ownership
-- [ ] Independently verifiable result
+- [x] One bounded source scope or coherent source bundle — the authorized Figma page `🤖 Testimonials grid section` plus the implementation repository baseline.
+- [x] One coherent implementation result — one responsive testimonials grid section.
+- [x] At most one implementation task — the result can be scaffolded, implemented, and validated as one bounded frontend task.
+- [x] No meaningful routing, shared state, persistence, auth, API, migration, deployment, security, privacy, or rollback decision — none is present in the source or repository baseline.
+- [x] No unresolved material product decision — the supplied page provides desktop, tablet, and mobile compositions, content, assets, typography, colors, spacing, and effects for the result.
+- [x] No coordination requiring separate task ownership — this is a single implementation repository and one implementation unit.
+- [x] Independently verifiable result — the rendered page can be compared against the supplied responsive Figma frames and validated with repository checks.
+
+The canonical workflow record selects **Express** with **Continuous documentation**. Express is the smallest valid profile because the work is one static, bounded responsive result with no application-level integration or architectural concerns. The current evidence does not justify a higher profile.
 
 ### Upgrade triggers
 
-- Multiple independent tasks/results:
-- Connected routes/shared state/integration:
-- Persistence/auth/API/architecture/operational risk:
-- Material source conflict/product decision:
-- Other:
+- Multiple independent tasks/results: None observed; upgrade if implementation discovers a second independent result.
+- Connected routes/shared state/integration: None observed; upgrade if introduced.
+- Persistence/auth/API/architecture/operational risk: None observed; upgrade if introduced.
+- Material source conflict/product decision: None currently known; stop and reassess if one appears.
+- Other: Upgrade if the single workpack can no longer preserve clear source, requirement, implementation, or validation ownership.
 
 ## 3. Source baseline narrative
 
+Canonical source state is owned by the workflow record; stable project identity and boundaries are owned by `design-workflow.config.json`.
 
+- `SRC-DS-001` — time-bound Figma input. Connected inspection confirmed the configured page `20:2` (`🤖 Testimonials grid section`) and its implementation evidence: Desktop `2001:1882` (1440×1029), Tablet `2012:730` (768×1353), Mobile `2012:1466` (375×2113), plus supporting Style Guide `6018:261` and scoped design variables.
+- `SRC-REPO-001` — immutable GitHub baseline at commit `4eefb50b2ac834344ae997a043f2fb000054f1ac`. At that baseline the configured implementation root `.` has no application scaffold: it contains the existing README together with the committed workflow configuration and pinned remote caller.
+- Both active inputs were verified through the canonical workflow CLI on 2026-09-16 before Stage 0 review.
+
+Implementation capability resolution from the repository baseline:
+
+- Adapter: `astro-typescript`
+- Mode: `scaffold`
+- Support level: maintained
+- Evidence: the implementation root is safely scaffoldable and contains no existing application/framework to preserve.
+- Constraint: adapter resolution does **not** authorize scaffolding. Application files remain forbidden until approved Stage 10 implementation work.
 
 ### Source authority, scope, and limitations
 
-- Authority order:
-- Included scope:
-- Excluded scope:
-- Conflicts/open questions:
-- Reproduction/capture evidence:
-- Limitations:
+- Authority order: repository configuration defines stable project boundaries; the authorized Figma page governs visual/content design evidence inside that scope; the immutable GitHub snapshot governs existing implementation state; the canonical workflow record governs mutable workflow state.
+- Included scope: the full authorized Figma page `🤖 Testimonials grid section`, with Desktop/Tablet/Mobile frames as the product result and the Style Guide as supporting token/type evidence; implementation work is bounded to the configured repository implementation root when later authorized.
+- Excluded scope: Figma content outside the authorized page, unrelated repository work, backend/API/auth/persistence/routing, production publication, and any design-source mutation not separately required and authorized.
+- Conflicts/open questions: none at Stage 0.
+- Reproduction/capture evidence: live Figma metadata and design-context inspection of all three responsive frames, screenshots returned by the design-context tool, variable definitions from the Desktop frame, and GitHub inspection of the pinned repository commit/tree.
+- Limitations: the Figma source is mutable and has no named-version pin in the supplied URL, so it is time-bound and must be reverified before material implementation; supplied frame widths are reference compositions rather than proven CSS breakpoint values; Figma does not by itself prove semantic HTML, accessibility conformance, or browser behavior.
 
 ### Verification narrative
 
-- Method and evidence:
-- Difference classification:
-- Rebaseline or impact assessment:
+- Method and evidence: `SRC-DS-001` was verified by connected Figma inspection of page `20:2`, responsive frames, Style Guide, and variables; `SRC-REPO-001` was verified by immutable GitHub commit/tree inspection.
+- Difference classification: no unexpected source or repository changes were found during Stage 0 verification.
+- Rebaseline or impact assessment: not required. Any later material Figma change requires source re-verification and impact assessment before affected implementation work.
+
+### Stage 0 review pass 1 — completeness and correctness
+
+Checked configuration identity, authorized scope, snapshot identities, repository pin, Express eligibility, implementation adapter resolution, and stated limitations against the connected sources. The initial page-level design-context request was not a valid render target, so inspection correctly continued on the Desktop, Tablet, and Mobile child frames without changing or narrowing the authorized page scope. No unresolved Stage 0 information gap remains.
+
+### Stage 0 review pass 2 — consistency, source integrity, authority, and risk
+
+Cross-checked the configured repository with the GitHub baseline and the configured Figma scope with live page metadata. No source conflict or implementation-framework conflict is present. The main ongoing integrity risk is the mutable Figma source; it is explicitly recorded as time-bound and will require verification before implementation. No blocker currently prevents the formal design audit.
 
 ## 4. Scope and constraints
 
-- Included:
-- Excluded:
-- Repository/technology constraints:
-- Content/assets constraints:
-- Accessibility baseline:
-- Browser/device constraints:
+- Included: one responsive testimonials grid result represented by the authorized Desktop, Tablet, and Mobile Figma frames; supporting visual tokens and assets inside the authorized page; later repository implementation and validation when workflow state permits.
+- Excluded: product features absent from the design, routing, forms or interactions, shared application state, APIs, persistence, authentication/authorization, backend/server behavior, framework migration, and production publishing.
+- Repository/technology constraints: current implementation root is scaffoldable; use the maintained Astro + TypeScript adapter when implementation is approved; preserve repository-level workflow/configuration files; do not add React or Tailwind merely because Figma reference code uses them.
+- Content/assets constraints: testimonial copy and supplied imagery are source evidence; Figma temporary asset URLs are inspection-only and must not become runtime dependencies. Required images/SVGs must be committed as durable repository assets during authorized implementation.
+- Accessibility baseline: implementation is expected to use semantic HTML and accessible native structure; specific accessibility findings and acceptance criteria belong to the formal audit/specification work rather than being invented at intake.
+- Browser/device constraints: Figma provides explicit reference compositions at 1440, 768, and 375 CSS-pixel frame widths. Intermediate responsive behavior and exact breakpoint choices require evidence-based implementation decisions during later documentation/planning; they are not assumed from frame names alone.
+- Runtime/deployment: no deployment provider or production URL is configured. Runtime evidence is therefore not a Stage 0 prerequisite.
 
 ## 5. Observed design evidence and audit
 
