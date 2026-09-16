@@ -233,6 +233,22 @@ Challenged the audit, requirements, design intent, specification, and acceptance
 
 Cross-checked `EVD-*` → `REQ-*` → `DES-*` → `SPEC-*` → `AC-*` traceability. Observed source facts remain distinct from inferred/recommended responsive and accessibility decisions. No exact breakpoint, browser-support range, backend behavior, interaction, or content correction is falsely attributed to Figma. The active time-bound Figma snapshot and immutable repository baseline remain the only input authorities; no design mutation or competing source was introduced during documentation. Open implementation-time risks are explicit: Figma must be reverified before code work, temporary assets must become durable repository files, Barlow Semi Condensed must load successfully, and selected responsive transition widths must be validated in-browser. The documentation set is internally consistent and ready for repository-aware planning, not yet authorized for implementation.
 
+### Architecture decision
+
+**Decision:** Architecture is **not required** for this Express work.
+
+**Rationale:** The approved result is one static responsive page section with one implementation unit. The active requirements and specification introduce no routing/navigation architecture, shared state, client/server data flow, API or third-party integration, persistence or migration, authentication/authorization, background work, multi-package/service boundary, architectural framework migration, deployment/runtime requirement, security/privacy boundary, reliability/observability subsystem, or cross-feature accessibility behavior. The repository baseline contains no existing application architecture to preserve; it is a safely scaffoldable root. Selecting the maintained Astro + TypeScript scaffold adapter is an implementation-environment/planning concern and does not itself create a meaningful architectural boundary.
+
+**Consequence:** Do not create `ARCHITECTURE.md` or introduce architectural layers for their own sake. Repository structure, component reuse, CSS/layout choices, asset placement, responsive transitions, and validation commands belong in the implementation plan. If later evidence introduces any architecture-triggering concern or a second independent result, stop affected work and reassess the Express profile before implementation.
+
+#### Stage 6 architecture review pass 1 — completeness and correctness
+
+Checked every architecture trigger named by the workflow against `SRC-REPO-001`, the requirements, and the specification. None applies to the approved static scope. The decision does not rely on framework stereotypes and does not confuse the future Astro scaffold with an existing architecture.
+
+#### Stage 6 architecture review pass 2 — consistency, traceability, risk, and uncertainty
+
+The not-required decision is consistent with Express eligibility, the repository baseline, `REQ-CON-002`, and the absence of data/integration/state/runtime concerns. Behavioral/accessibility constraints remain owned by the specification; repository structure remains deferred to planning. No unresolved structural decision is being hidden by skipping architecture, and the documented upgrade trigger remains active if scope changes.
+
 ## 7. Repository-aware implementation approach
 
 - Existing files/patterns:
