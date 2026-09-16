@@ -308,6 +308,14 @@ Rechecked the current branch tree and confirmed there is still no package manife
 
 Checked that Express has exactly one independently verifiable implementation task with no prerequisites; the task references all four required plan items; responsive/accessibility/content/state/error/testing concerns are integrated into the same objective; the five required validation checks are declared before readiness; and implementation remains forbidden while execution mode is Continuous documentation. No second task, hidden dependency, or profile upgrade is required by the approved scope.
 
+### Human implementation approval
+
+- **Actor:** Human project owner (`ferfalcon`) in this ChatGPT session.
+- **Approval evidence:** Explicit message on 2026-09-16: “I approve, proceed”.
+- **Approved artifact revision:** `WORKPACK.md` blob `621ad7dc9deb85bc7eeae2bef77957d3f2b624e2`, the reviewed Stage 9 narrative presented at the Brief and final review checkpoint.
+- **Approved scope:** The complete single Express task `P01-T01` exactly as defined above, including `PLAN-001`–`PLAN-004`, `AC-001`–`AC-013`, the Astro + TypeScript maintained scaffold, responsive/accessibility/content/asset/font requirements, all five required validations, stated exclusions, and execution-time stop conditions.
+- **Authorization boundary:** This approval permits the workflow to switch to Task-by-task mode and implement `P01-T01` sequentially. It does not authorize copy corrections, Figma/source-design mutation, unrelated repository work, scope expansion, architecture/profile expansion, production publication, or bypassing any source-integrity/validation stop condition. Final implementation acceptance remains a separate explicit human decision.
+
 ## 9. Review pass 1 — Completeness and correctness
 
 Adversarially checked the Stage 7 plan against the exact Figma scope, all must-have requirements/specifications, the architecture-not-required decision, the current branch tree, and the pinned maintained Astro adapter. The plan covers application scaffolding, visual/content fidelity, durable assets, font availability, semantic order, accessibility, responsive interpolation and out-of-range behavior, long content, static-state scope, CI/browser checks, and regression evidence.
