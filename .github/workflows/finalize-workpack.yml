@@ -1,17 +1,18 @@
 name: Finalize Stage 11 workpack narrative
 
 on:
-  push:
+  pull_request:
     branches:
-      - design/initial-ui
-    paths:
-      - .github/workflows/finalize-workpack.yml
+      - main
+    types:
+      - synchronize
 
 permissions:
   contents: write
 
 jobs:
   finalize:
+    if: github.head_ref == 'design/initial-ui'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
