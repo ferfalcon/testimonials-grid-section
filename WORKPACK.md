@@ -350,26 +350,30 @@ This section remains narrative in CLI-managed mode. Do not duplicate record-owne
 
 ### Files and behavior
 
-- Files created/modified/deleted:
-- Behavior implemented:
+- Files created/modified/deleted: scaffolded the maintained Astro + TypeScript application; added the testimonial page, reusable testimonial-card component, CSS tokens/responsive layout, five durable avatar assets, the durable quotation-mark SVG, self-hosted Barlow Semi Condensed 500/600 plus OFL license, npm lockfile, Playwright/axe validation suite, and repository UI-validation workflow. The temporary dependency-materialization workflow removed itself after committing the lockfile and local fonts.
+- Behavior implemented: one static five-card testimonial collection preserving Daniel → Jonathan → Jeanette → Patrick → Kira document order and source copy, with the authorized Desktop/Tablet/Mobile compositions, fluid transition behavior, no invented interaction, semantic page structure, decorative/redundant image treatment, and repository-local runtime assets/fonts.
 
 ### Implementation discoveries
 
 | Discovery | Impact | Owning artifact/section | Required update |
 |---|---|---|---|
-| ... | ... | ... | ... |
+| Reverification immediately before implementation found no material change in the authorized Figma Desktop `2001:1882`, Tablet `2012:730`, or Mobile `2012:1466` evidence. | Approved scope and task remain valid. | Source baseline / Stage 10 implementation | No rebaseline required. |
+| The exact 1114px Desktop geometry resolves to four effective tracks of 255px, 253px, 255px, and 255px with 32px gaps; equal fractional tracks round Daniel to 541px instead of the evidenced 540px. | Fixed the desktop grid to the source-derived pixel geometry while retaining responsive behavior outside the reference width. | Responsive implementation / `SPEC-BEH-002` | Recorded in implementation CSS and browser validation. |
+| Automated accessibility validation requires a page-level level-one heading even though no visible collection heading is present in Figma. | Added a visually-hidden `Graduate testimonials` h1 and labelled the collection from it; visible composition is unchanged. | Accessibility implementation / `SPEC-ACC-*` | Recorded as semantic implementation detail, not a visual design change. |
+| Original Figma avatar source files were materially larger than their 28–32px presentation size. | Committed exact rendered avatar-node assets rather than oversized temporary originals; no Figma runtime URL remains. | Asset implementation / `REQ-CON-001` | Durable repository assets verified by Playwright. |
 
 ### Deviations
 
 | Planned approach/baseline | Actual approach/baseline | Reason | Approval/evidence | Impact |
 |---|---|---|---|---|
-| ... | ... | ... | ... | ... |
+| Use the maintained Astro + TypeScript scaffold and preserve Figma visual evidence without adding React/Tailwind. | Implemented Astro + TypeScript with authored CSS; no React or Tailwind dependency was added. | Matches repository adapter and source scope. | Approved `P01-T01`; pinned adapter evidence. | None. |
+| Select responsive transitions from browser fit evidence rather than treating Figma frame widths as breakpoints. | Selected 660px and 1234px transitions and validated 320, 659, 660, 1233, 1234, and 1600px in addition to 375, 768, and 1440px. | Maintains readable composition/no-overflow between and outside reference widths. | `AUD-001`, `DES-RWD-005`, passing Playwright evidence. | Non-blocking implementation choice within approved scope. |
+| Preserve source copy exactly. | Preserved source strings, including `developent experience` and source quotation/spacing inconsistencies. | Copy correction was not authorized. | `REQ-BR-001`, approved scope. | None. |
 
 ### Remaining risks and documentation updates
 
-- Risks:
-- Documentation updated:
-
+- Risks: no blocking implementation risk remains. Production deployment/runtime evidence is not applicable because no deployment provider or production URL is configured. The Figma source remains time-bound for future changes, but it was reverified immediately before this implementation.
+- Documentation updated: this implementation narrative records the source-integrity result, durable-asset/font materialization, responsive geometry discovery, accessibility semantic addition, implementation-selected transitions, and validation evidence. Structured task/validation/output status remains owned by the canonical workflow record.
 
 
 ## 13. Final implementation review
