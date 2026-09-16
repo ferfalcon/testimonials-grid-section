@@ -15,7 +15,11 @@
     "currentTask": null,
     "latestOutput": null,
     "latestValidationRuntime": null,
-    "architectureDecision": null
+    "architectureDecision": {
+      "result": "Not required",
+      "reason": "The scoped result is one static responsive testimonial section with no routing, shared state, API, integration, persistence, auth, deployment, security/privacy, migration, reliability, observability, or other cross-cutting structural concern requiring separate architecture reasoning.",
+      "recordedAt": "2026-09-16T04:21:55.029Z"
+    }
   },
   "snapshots": [
     {
