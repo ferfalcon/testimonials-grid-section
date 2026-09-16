@@ -123,7 +123,28 @@ Cross-checked shared content order, card anatomy, colors, typography, spacing, a
 
 | Requirement ID | Outcome, rule, or constraint | Priority | Evidence/authority |
 |---|---|---|---|
-| `REQ-FR-001` | ... | Must / Should / Could | ... |
+| `REQ-FR-001` | The result must present exactly the five testimonials evidenced in the authorized design scope, preserving each person’s identity, role label, lead statement, body quotation, and association with the correct avatar. | Must | `EVD-002`, `SRC-DS-001` |
+| `REQ-FR-002` | The five testimonials must remain available in the same meaningful document order—Daniel → Jonathan → Jeanette → Patrick → Kira—across layout conditions. | Must | `EVD-014` |
+| `REQ-FR-003` | The layout must reflow from the supplied wide composition through the supplied intermediate composition to a single-column narrow composition without losing, duplicating, or reordering testimonial content. | Must | `EVD-003`, `EVD-004`, `EVD-005`, `AUD-001` |
+| `REQ-NFR-001` | At the supplied 1440px, 768px, and 375px reference widths, the rendered result must materially match the Figma composition, typography hierarchy, color roles, spacing rhythm, card shapes/effects, and relative visual emphasis. | Must | `EVD-001`, `EVD-003`–`EVD-009` |
+| `REQ-NFR-002` | Across the responsive range exercised during validation, content must reflow without horizontal page scrolling, unintended clipping, text overlap, or inaccessible off-screen content. | Must | `AUD-001`, `AUD-007`; workflow quality baseline |
+| `REQ-AR-001` | The implementation must expose the testimonial content in a logical semantic reading order consistent with the stable source order, independent of visual grid placement. | Must | `EVD-014`, `AUD-002` |
+| `REQ-AR-002` | Decorative artwork must not create redundant assistive-technology output, and avatar treatment must avoid repeating information already conveyed by the adjacent person name unless the image itself is intended to add distinct meaning. | Must | `EVD-009`, `AUD-002`; accessibility quality baseline |
+| `REQ-AR-003` | Text/background combinations used by the source design must retain at least WCAG AA normal-text contrast (4.5:1); implementation must not introduce a lower-contrast substitution for those roles. | Must | `EVD-006`, `EVD-015` |
+| `REQ-BR-001` | Source testimonial copy is authoritative for this implementation. Apparent spelling, punctuation, or spacing issues must not be silently rewritten; any copy correction requires explicit human approval. | Must | `EVD-016`, `AUD-006`, source-authority rule |
+| `REQ-CON-001` | Required visual assets must be stored as durable repository assets before they become runtime dependencies; temporary Figma MCP URLs must not be committed as production asset sources. | Must | `EVD-012`, `AUD-003` |
+| `REQ-CON-002` | The result must remain a static frontend presentation unless new approved evidence introduces interaction, routing, data, or application-state requirements. | Must | `EVD-013`, Express eligibility evidence |
+| `REQ-NFR-003` | Typography must preserve the evidenced Barlow Semi Condensed family and source weight/size/line-height roles closely enough that text wrapping and card proportions remain faithful at the supplied reference widths. | Must | `EVD-007`, `AUD-007` |
+
+Assumptions and recommendations are intentionally limited. No browser-support matrix, performance threshold, backend behavior, persistence rule, authentication rule, or security policy is invented because the source does not establish them. The implementation technology constraint remains owned by the Stage 0 repository capability decision and later repository-aware planning, not by product requirements.
+
+#### Stage 2 review pass 1 — completeness and correctness
+
+Checked functional outcome, responsive quality, source-copy authority, durable assets, accessibility, and visual-fidelity expectations against the audit. Removed implementation-specific choices from the requirements: no CSS mechanism, breakpoint number, component file structure, font-delivery package, or test framework is prescribed here. Requirements cover all currently material audit findings without creating unsupported product behavior.
+
+#### Stage 2 review pass 2 — consistency, traceability, risks, and uncertainty
+
+Every material requirement traces to source evidence, an explicit source-authority rule, or an applicable accessibility/workflow quality baseline. `AUD-001`, `AUD-002`, `AUD-003`, and `AUD-007` are carried forward as requirements without pretending Figma proves the missing behavior. `REQ-BR-001` keeps the observed copy typo as a source-authority issue rather than silently resolving it. No requirement conflicts with Express eligibility or the repository baseline, and no open requirement requires human clarification before design intent is documented.
 
 ### Design intent
 
@@ -203,7 +224,7 @@ This section remains narrative in CLI-managed mode. Do not duplicate record-owne
 
 | Discovery | Impact | Owning artifact/section | Required update |
 |---|---|---|---|
-| ... | ... | ... | ... |
+| ... | ... | ... | ... | ... |
 
 ### Deviations
 
