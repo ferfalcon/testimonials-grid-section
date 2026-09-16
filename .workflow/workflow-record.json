@@ -361,6 +361,21 @@
             "PLAN-003",
             "PLAN-004"
           ]
+        },
+        {
+          "name": "Visual fidelity",
+          "kind": "Visual",
+          "required": true,
+          "status": "Not executed",
+          "expected": "Browser captures at 1440, 768, and 375 plus transition-adjacent widths materially match the authorized Figma composition, typography, colors, spacing, card radius/shadow, and Daniel quotation artwork.",
+          "command": "npm run test:e2e",
+          "evidence": [],
+          "reason": "Pending authorized implementation",
+          "references": [
+            "PLAN-002",
+            "PLAN-003",
+            "PLAN-004"
+          ]
         }
       ]
     }
