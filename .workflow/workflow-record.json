@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "project": {
+    "name": "Testimonials grid section",
+    "profile": "Express",
+    "executionMode": "Continuous documentation"
+  },
+  "state": {
+    "stage": 0,
+    "status": "In progress",
+    "activeInputs": [
+      "SRC-DS-001",
+      "SRC-REPO-001"
+    ],
+    "currentTask": null,
+    "latestOutput": null,
+    "latestValidationRuntime": null,
+    "architectureDecision": null
+  },
+  "snapshots": [
+    {
+      "id": "SRC-DS-001",
+      "role": "Input baseline",
+      "pinStrength": "Time-bound",
+      "status": "Unverified",
+      "reference": "https://www.figma.com/design/rEyKRJIWQqTu91C2U41mXa/Testimonials-grid-section---%F0%9F%A4%96-Workflow"
+    },
+    {
+      "id": "SRC-REPO-001",
+      "role": "Input baseline",
+      "pinStrength": "Immutable",
+      "status": "Unverified",
+      "reference": "https://github.com/ferfalcon/testimonials-grid-section",
+      "commit": "4eefb50b2ac834344ae997a043f2fb000054f1ac"
+    }
+  ],
+  "verifications": [],
+  "artifacts": [
+    {
+      "id": "ART-WORKPACK",
+      "type": "WORKPACK",
+      "path": "WORKPACK.md",
+      "status": "Draft",
+      "baseline": [
+        "SRC-DS-001",
+        "SRC-REPO-001"
+      ]
+    }
+  ],
+  "traceItems": [],
+  "gates": [],
+  "tasks": [],
+  "profileTransitions": [],
+  "implementationReviews": [],
+  "toolkit": {
+    "repository": "ferfalcon/figma-to-implementation-workflow",
+    "revision": "8c3e92413be821e9a25980a074004f2de3414d7f"
+  }
+}
