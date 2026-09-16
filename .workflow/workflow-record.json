@@ -57,13 +57,13 @@
       "id": "ART-WORKPACK",
       "type": "WORKPACK",
       "path": "WORKPACK.md",
-      "status": "Reviewed",
+      "status": "Draft",
       "baseline": [
         "SRC-DS-001",
         "SRC-REPO-001"
       ],
-      "statusChangedAt": "2026-09-16T04:15:18.475Z",
-      "statusEvidence": "Consolidated Express documentation reviewed across audit, requirements, design intent, specification, acceptance criteria, source authority, responsive behavior, accessibility, content fidelity, and implementation constraints. Stage 5 corrections for unsupplied-width behavior are incorporated."
+      "statusChangedAt": "2026-09-16T04:17:14.891Z",
+      "statusEvidence": "Stage 6 must append the explicit architecture-decision rationale to the consolidated Express Workpack before it is reviewed again."
     }
   ],
   "traceItems": [],
