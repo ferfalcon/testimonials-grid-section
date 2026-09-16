@@ -1,0 +1,57 @@
+---
+interface Props {
+  person: string;
+  role: string;
+  avatar: string;
+  lead: string;
+  quote: string;
+  theme: 'purple' | 'slate' | 'light' | 'dark';
+  placement: 'daniel' | 'jonathan' | 'jeanette' | 'patrick' | 'kira';
+  ring?: boolean;
+  decorativeQuote?: boolean;
+}
+
+const {
+  person,
+  role,
+  avatar,
+  lead,
+  quote,
+  theme,
+  placement,
+  ring = false,
+  decorativeQuote = false,
+} = Astro.props;
+---
+
+<article
+  class:list={['testimonial-card', `testimonial-card--${theme}`, `testimonial-card--${placement}`]}
+  data-testid="testimonial-card"
+  data-person={person}
+>
+  {decorativeQuote && (
+    <img
+      class="testimonial-card__quotation-mark"
+      src="/assets/bg-pattern-quotation.svg"
+      alt=""
+      aria-hidden="true"
+      width="104"
+      height="102"
+    />
+  )}
+
+  <div class="testimonial-card__content">
+    <div class="testimonial-card__profile">
+      <span class:list={['testimonial-card__avatar', ring && 'testimonial-card__avatar--ring']}>
+        <img src={avatar} alt="" width={ring ? 32 : 28} height={ring ? 32 : 28} />
+      </span>
+      <div class="testimonial-card__identity">
+        <p class="testimonial-card__name">{person}</p>
+        <p class="testimonial-card__role">{role}</p>
+      </div>
+    </div>
+
+    <p class="testimonial-card__lead">{lead}</p>
+    <p class="testimonial-card__quote">{quote}</p>
+  </div>
+</article>
