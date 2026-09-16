@@ -3,11 +3,11 @@
   "project": {
     "name": "Testimonials grid section",
     "profile": "Express",
-    "executionMode": "Continuous documentation"
+    "executionMode": "Task-by-task"
   },
   "state": {
     "stage": 9,
-    "status": "Ready",
+    "status": "In progress",
     "activeInputs": [
       "SRC-DS-001",
       "SRC-REPO-001"
@@ -293,7 +293,7 @@
     {
       "id": "GATE-010",
       "stage": 9,
-      "status": "Active",
+      "status": "Superseded",
       "result": "Passed",
       "baseline": [
         "SRC-DS-001",
